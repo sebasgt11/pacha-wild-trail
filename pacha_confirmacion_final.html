@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmación Final · Pacha Wild Trail 28 Mar</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0E0E0C;
+    --white: #FFFFFF;
+    --cream: #F4EFE6;
+    --orange: #E8541A;
+    --orange-dark: #B83E0F;
+    --teal: #0D4A4A;
+    --teal-light: #1A6B6B;
+    --gold: #D4A843;
+    --red: #C0392B;
+    --border: rgba(255,255,255,0.1);
+    --border-light: rgba(255,255,255,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+  }
+
+  /* Diagonal hero stripe */
+  .hero-stripe {
+    background: var(--orange);
+    padding: 6px 0;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .page { max-width: 580px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* HERO */
+  .hero {
+    padding: 40px 0 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .event-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(232,84,26,0.5);
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(52px, 13vw, 76px);
+    font-weight: 900;
+    line-height: 0.92;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .hero h1 .accent { color: var(--orange); }
+
+  .hero .sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(192,57,43,0.15);
+    border: 2px solid var(--red);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    animation: slideIn 0.5s 0.2s ease both;
+  }
+
+  .warning-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+
+  .warning-box .w-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FF6B6B;
+    margin-bottom: 4px;
+  }
+
+  .warning-box .w-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .warning-box strong { color: #FF6B6B; }
+
+  /* DEADLINE */
+  .deadline-box {
+    background: rgba(212,168,67,0.1);
+    border: 1px solid rgba(212,168,67,0.4);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  /* LOGISTICS CARDS */
+  .logistics-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  .route-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .route-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  .route-card .r-dir {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+
+  .route-card .r-stop {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .r-stop-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .r-time {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+    min-width: 52px;
+  }
+
+  .r-place { color: rgba(255,255,255,0.8); line-height: 1.3; font-size: 13px; }
+  .r-place a { color: rgba(255,255,255,0.6); font-size: 11px; text-decoration: none; display: block; }
+
+  .info-only {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  /* KIT BOX */
+  .kit-box {
+    background: rgba(13,74,74,0.3);
+    border: 1px solid rgba(26,107,107,0.5);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+
+  .kit-box .k-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #5EC4C4;
+    margin-bottom: 8px;
+  }
+
+  .kit-box .k-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  .kit-box .k-resp {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* INCLUDES */
+  .includes-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .inc-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* FORM */
+  .form-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    animation: fadeUp 0.6s 0.15s ease both;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .form-group { margin-bottom: 22px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .field-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 15px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    -webkit-appearance: none;
+  }
+
+  input:focus, select:focus {
+    border-color: var(--orange);
+    background: rgba(232,84,26,0.06);
+  }
+
+  input::placeholder { color: rgba(255,255,255,0.2); }
+  select option { background: #1a1a18; }
+
+  /* Cat cards */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cat-opt input[type="radio"] { display: none; }
+
+  .cat-opt label {
+    display: block;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .cat-opt input:checked + label {
+    border-color: var(--orange);
+    background: rgba(232,84,26,0.1);
+  }
+
+  .cat-km {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.5);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .cat-opt input:checked + label .cat-km { color: var(--orange); }
+
+  .cat-desc { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .cat-opt input:checked + label .cat-desc { color: rgba(255,255,255,0.7); }
+
+  /* Point cards */
+  .point-opts { display: flex; flex-direction: column; gap: 8px; }
+
+  .point-opt input[type="radio"] { display: none; }
+
+  .point-opt label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .point-opt input:checked + label {
+    border-color: var(--orange);
+    background: rgba(232,84,26,0.08);
+  }
+
+  .point-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .point-opt input:checked + label .point-num { color: var(--orange); }
+
+  .point-info .p-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .point-info .p-time {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+
+  .point-info .p-link { font-size: 11px; color: rgba(255,255,255,0.35); text-decoration: none; }
+
+  /* Kit day cards */
+  .kit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .kit-opt input[type="radio"] { display: none; }
+
+  .kit-opt label {
+    display: block;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .kit-opt input:checked + label {
+    border-color: #5EC4C4;
+    background: rgba(13,74,74,0.3);
+  }
+
+  .kit-day {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+  }
+
+  .kit-opt input:checked + label .kit-day { color: #5EC4C4; }
+  .kit-sub { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+  /* Condition options */
+  .cond-opts { display: flex; flex-direction: column; gap: 8px; }
+
+  .cond-opt input[type="radio"] { display: none; }
+
+  .cond-opt label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .cond-opt input:checked + label {
+    border-color: var(--orange);
+    background: rgba(232,84,26,0.07);
+    color: var(--white);
+  }
+
+  .cond-radio {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .cond-opt input:checked + label .cond-radio {
+    border-color: var(--orange);
+    box-shadow: inset 0 0 0 4px var(--orange);
+  }
+
+  .otro-input { display: none; margin-top: 8px; }
+  .otro-input input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    outline: none;
+  }
+  .otro-input input:focus { border-color: var(--orange); }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Submit */
+  .btn-submit {
+    width: 100%;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: 0 8px 30px rgba(232,84,26,0.3);
+    margin-top: 8px;
+  }
+
+  .btn-submit:hover { background: #ff6530; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,84,26,0.45); }
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* Success */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 16px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .success-icon {
+    width: 72px; height: 72px;
+    background: rgba(232,84,26,0.15);
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+  }
+
+  .success-screen h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .success-screen h2 span { color: var(--orange); }
+
+  .success-screen p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .summary-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .s-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .s-row:last-child { border-bottom: none; }
+  .s-key { color: rgba(255,255,255,0.4); flex-shrink: 0; }
+  .s-val { color: white; font-weight: 600; text-align: right; }
+
+  .final-note {
+    background: rgba(232,84,26,0.08);
+    border-left: 3px solid var(--orange);
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @media (max-width: 400px) {
+    .form-card { padding: 22px 16px; }
+    .route-grid, .cat-grid, .kit-grid, .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-stripe">⚠️ &nbsp; Cierre de registro: Martes 24 de marzo &nbsp; ⚠️</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="event-badge">Patronato BCP · Becarios · Registro Final</div>
+    <h1>PACHA<br>WILD <span class="accent">TRAIL</span></h1>
+    <p class="sub">Sábado 28 de marzo · Santuario de Amancay · Pachacámac</p>
+
+    <!-- WARNING -->
+    <div class="warning-box">
+      <span class="warning-icon">🚨</span>
+      <div>
+        <div class="w-title">Puntualidad obligatoria</div>
+        <div class="w-text">
+          <strong>Quien no esté a la hora en su punto de recojo perderá el transporte y el acceso a la carrera.</strong> Sin excepciones — es por seguridad del grupo.
+        </div>
+      </div>
+    </div>
+
+    <div class="deadline-box">
+      📅 &nbsp; <span>Completa este formulario <strong>hasta el martes 24 de marzo</strong> (luego de recoger tu kit). Solo los registrados tendrán transporte garantizado.</span>
+    </div>
+
+    <!-- LOGISTICS -->
+    <div class="logistics-title">🚌 Logística de transporte — solo informativo</div>
+    <div class="route-grid">
+      <div class="route-card">
+        <div class="r-dir">IDA →</div>
+        <div class="r-stop">
+          <div class="r-stop-item">
+            <span class="r-time">4:45am</span>
+            <span class="r-place">ESCALO
+              <a href="https://maps.app.goo.gl/HuajxYxrEB3vS2qJ9" target="_blank">📍 Ver mapa</a>
+            </span>
+          </div>
+          <div class="r-stop-item">
+            <span class="r-time">5:45am</span>
+            <span class="r-place">U. de Lima
+              <a href="https://maps.app.goo.gl/KKoKZZfJN8EQfCHW9" target="_blank">📍 Ver mapa</a>
+            </span>
+          </div>
+          <div class="r-stop-item">
+            <span class="r-time">7:00am</span>
+            <span class="r-place">Largada de carrera</span>
+          </div>
+        </div>
+        <div class="info-only">* Horarios referenciales</div>
+      </div>
+
+      <div class="route-card">
+        <div class="r-dir">← VUELTA</div>
+        <div class="r-stop">
+          <div class="r-stop-item">
+            <span class="r-time">11:30am</span>
+            <span class="r-place">Bus parte de Pachacámac</span>
+          </div>
+          <div class="r-stop-item">
+            <span class="r-time">~1:00pm</span>
+            <span class="r-place">Est. La Cultura</span>
+          </div>
+          <div class="r-stop-item">
+            <span class="r-time">~2:00pm</span>
+            <span class="r-place">ESCALO</span>
+          </div>
+        </div>
+        <div class="info-only">* Horarios aproximados</div>
+      </div>
+    </div>
+
+    <!-- KIT INFO -->
+    <div class="kit-box">
+      <div class="k-title">📦 Recojo de kit — Real Plaza Salaverry</div>
+      <div class="k-detail">
+        Tienda <strong>Merrell</strong> · 4to piso · Lunes o Martes entre <strong>12:30pm y 7:00pm</strong><br>
+        Presentar únicamente con <strong>DNI</strong>.
+      </div>
+      <div class="k-resp">⚠️ Es tu responsabilidad asistir en el horario indicado</div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="logistics-title">💡 Tips para el día de la carrera</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="font-size:22px;flex-shrink:0;">🧢</span>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:3px;">Lleva gorro para el sol</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;">El gorro BCP es perfecto — si no tienes, cualquier gorro o visera te protegerá del sol en la ruta.</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="font-size:22px;flex-shrink:0;">👟</span>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:3px;">Zapatillas con agarre</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;">Lo ideal son zapatillas de trail o con buen agarre para terreno de montaña. Si no tienes, ¡no hay problema! Daniel te dará las indicaciones y puedes ir a tu ritmo tranquilo 🙌</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INCLUDES -->
+    <div class="logistics-title">✅ El equipo BCP incluye</div>
+    <div class="includes-row">
+      <div class="inc-pill">💧 Bebida rehidratante</div>
+      <div class="inc-pill">🧴 Bloqueador solar</div>
+      <div class="inc-pill">🍌 Plátano + mandarina</div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <form id="regForm">
+
+      <!-- 01 DATOS -->
+      <div class="section-label">01 · Datos personales</div>
+
+      <div class="form-row">
+        <div>
+          <label class="field-label">Nombre completo</label>
+          <select id="nombre" required>
+            <option value="" disabled selected>Selecciona tu nombre</option>
+          <option value="Alonso Oli">Alonso Oli</option>
+          <option value="Andres Cueva">Andres Cueva</option>
+          <option value="Angelina Nicole Molero">Angelina Nicole Molero</option>
+          <option value="Carlo Adrián Soto">Carlo Adrián Soto</option>
+          <option value="Claudia Lengua">Claudia Lengua</option>
+          <option value="Daniel Armando Nicolas Rodriguez">Daniel Armando Nicolas Rodriguez</option>
+          <option value="David Vallvé">David Vallvé</option>
+          <option value="Del Piero Flores">Del Piero Flores</option>
+          <option value="Diana Isabel Santuyo">Diana Isabel Santuyo</option>
+          <option value="Fatima Isabel Huayta">Fatima Isabel Huayta</option>
+          <option value="Francisco Antonio Vargas">Francisco Antonio Vargas</option>
+          <option value="Ingrid Isabel Mamani">Ingrid Isabel Mamani</option>
+          <option value="Isabel Berrospi">Isabel Berrospi</option>
+          <option value="Johann Vicente Jara">Johann Vicente Jara</option>
+          <option value="Jose Antonio Arestegui">Jose Antonio Arestegui</option>
+          <option value="Jose Eduardo Vidal">Jose Eduardo Vidal</option>
+          <option value="Juana Victoria Lopez">Juana Victoria Lopez</option>
+          <option value="Juani Maribel Mas">Juani Maribel Mas</option>
+          <option value="Justin Sofia De La Cruz">Justin Sofia De La Cruz</option>
+          <option value="Kimberly Pasache">Kimberly Pasache</option>
+          <option value="Maricielo Del Milagro Rueda">Maricielo Del Milagro Rueda</option>
+          <option value="Mariela Alexandra Cordova">Mariela Alexandra Cordova</option>
+          <option value="Mauricio André Beuzeville">Mauricio André Beuzeville</option>
+          <option value="Meljovit Wholker Riofano">Meljovit Wholker Riofano</option>
+          <option value="Miguel Angel Cecairos">Miguel Angel Cecairos</option>
+          <option value="Miguel Emir Godinez">Miguel Emir Godinez</option>
+          <option value="Noemi Olinda Alcala">Noemi Olinda Alcala</option>
+          <option value="Pablo Paredes">Pablo Paredes</option>
+          <option value="Percy Ivan Asencio">Percy Ivan Asencio</option>
+          <option value="Ruth Tania Enriquez">Ruth Tania Enriquez</option>
+          <option value="Sabrina Rojas">Sabrina Rojas</option>
+          <option value="Sebastián Rodrigo Gómez">Sebastián Rodrigo Gómez</option>
+          <option value="Sheyla Loreley Frontado">Sheyla Loreley Frontado</option>
+          <option value="Tamara Miranda Vega">Tamara Miranda Vega</option>
+          <option value="Valeria Beatriz Abad">Valeria Beatriz Abad</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label">Celular</label>
+          <input type="tel" id="celular" placeholder="9XXXXXXXX" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label">Contacto de emergencia (nombre y celular)</label>
+        <input type="text" id="emergencia" placeholder="Ej. Mamá — 987654321" required>
+      </div>
+
+      <!-- 02 CATEGORÍA -->
+      <div class="divider"></div>
+      <div class="section-label">02 · Categoría en la carrera</div>
+
+      <div class="form-group">
+        <div class="cat-grid">
+          <div class="cat-opt">
+            <input type="radio" name="categoria" id="cat7" value="7K" required>
+            <label for="cat7">
+              <span class="cat-km">7K</span>
+              <span class="cat-desc">Carrera trail</span>
+            </label>
+          </div>
+          <div class="cat-opt">
+            <input type="radio" name="categoria" id="cat25" value="2.5K">
+            <label for="cat25">
+              <span class="cat-km">2.5K</span>
+              <span class="cat-desc">Caminata trail</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 PUNTO DE RECOJO -->
+      <div class="divider"></div>
+      <div class="section-label">03 · Punto de recojo del transporte</div>
+
+      <div class="form-group">
+        <div class="point-opts">
+          <div class="point-opt">
+            <input type="radio" name="punto" id="p1" value="ESCALO — 4:45am" required>
+            <label for="p1">
+              <span class="point-num">1</span>
+              <div class="point-info">
+                <div class="p-time">4:45 AM</div>
+                <div class="p-name">ESCALO</div>
+                <a class="p-link" href="https://maps.app.goo.gl/HuajxYxrEB3vS2qJ9" target="_blank">📍 Ver ubicación</a>
+              </div>
+            </label>
+          </div>
+          <div class="point-opt">
+            <input type="radio" name="punto" id="p2" value="Universidad de Lima — 5:45am">
+            <label for="p2">
+              <span class="point-num">2</span>
+              <div class="point-info">
+                <div class="p-time">5:45 AM</div>
+                <div class="p-name">Universidad de Lima</div>
+                <a class="p-link" href="https://maps.app.goo.gl/KKoKZZfJN8EQfCHW9" target="_blank">📍 Ver ubicación</a>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 KIT -->
+      <div class="divider"></div>
+      <div class="section-label">04 · ¿Cuándo recoges tu kit?</div>
+
+      <div class="form-group">
+        <div class="kit-grid">
+          <div class="kit-opt">
+            <input type="radio" name="kit_dia" id="klunes" value="Lunes 23 de marzo" required>
+            <label for="klunes">
+              <span class="kit-day">LUNES</span>
+              <span class="kit-sub">23 de marzo<br>12:30 – 7:00pm</span>
+            </label>
+          </div>
+          <div class="kit-opt">
+            <input type="radio" name="kit_dia" id="kmartes" value="Martes 24 de marzo">
+            <label for="kmartes">
+              <span class="kit-day">MARTES</span>
+              <span class="kit-sub">24 de marzo<br>12:30 – 7:00pm</span>
+            </label>
+          </div>
+        </div>
+        <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:8px;line-height:1.5;">
+          Merrell · 4to piso Real Plaza Salaverry · Solo con DNI · Es tu responsabilidad asistir
+        </p>
+      </div>
+
+      <!-- 05 CONDICIÓN -->
+      <div class="divider"></div>
+      <div class="section-label">05 · ¿Alguna condición que debamos considerar?</div>
+
+      <div class="form-group">
+        <div class="cond-opts">
+          <div class="cond-opt">
+            <input type="radio" name="condicion" id="c1" value="Ninguna, estoy al 100%" required>
+            <label for="c1"><span class="cond-radio"></span>Ninguna — estoy al 100% ✅</label>
+          </div>
+          <div class="cond-opt">
+            <input type="radio" name="condicion" id="c2" value="Lesión leve">
+            <label for="c2"><span class="cond-radio"></span>Tengo una lesión leve</label>
+          </div>
+          <div class="cond-opt">
+            <input type="radio" name="condicion" id="c3" value="Condición médica">
+            <label for="c3"><span class="cond-radio"></span>Tengo una condición médica</label>
+          </div>
+          <div class="cond-opt">
+            <input type="radio" name="condicion" id="c_otro" value="Otro">
+            <label for="c_otro"><span class="cond-radio"></span>Otra situación</label>
+          </div>
+          <div class="otro-input" id="otro_cond_input">
+            <input type="text" id="otro_cond" placeholder="Cuéntanos brevemente...">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">CONFIRMAR ASISTENCIA →</button>
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">🏔️</div>
+      <h2>¡LISTO, <span id="successNombre"></span>!</h2>
+      <p>Tu registro está confirmado. Nos vemos el <strong>sábado 28 de marzo</strong> en la largada. ¡A darle!</p>
+
+      <div class="summary-card" id="summaryBox"></div>
+
+      <div class="final-note">
+        🚨 <strong>Recuerda:</strong> Llega puntual a tu punto de recojo — quien no esté a la hora pierde el transporte y el acceso.<br><br>
+        📦 Recoge tu kit en <strong>Merrell · 4to piso Real Plaza Salaverry</strong> solo con DNI.<br><br>
+        💪 ¡Prepárate — el Pacha Wild Trail te espera!
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx6CaBZ6dSEzbIFm-qdkakfJNnqvffXbHZPS-eNebvyeeLeOU65mtk0tdHIVq5nRpjL/exec";
+
+  // Mostrar campo "otro" para condición
+  document.getElementById('c_otro').addEventListener('change', function() {
+    document.getElementById('otro_cond_input').style.display = this.checked ? 'block' : 'none';
+  });
+  ['c1','c2','c3'].forEach(id => {
+    document.getElementById(id).addEventListener('change', function() {
+      document.getElementById('otro_cond_input').style.display = 'none';
+    });
+  });
+
+  document.getElementById('regForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const nombre     = document.getElementById('nombre').value.trim();
+    const celular    = document.getElementById('celular').value.trim();
+    const emergencia = document.getElementById('emergencia').value.trim();
+    const categoria  = document.querySelector('input[name="categoria"]:checked')?.value;
+    const punto      = document.querySelector('input[name="punto"]:checked')?.value;
+    const kit_dia    = document.querySelector('input[name="kit_dia"]:checked')?.value;
+    const cond_sel   = document.querySelector('input[name="condicion"]:checked')?.value;
+    const condicion  = cond_sel === 'Otro'
+      ? (document.getElementById('otro_cond').value.trim() || 'Otro')
+      : cond_sel;
+
+    if (!nombre || !celular || !emergencia || !categoria || !punto || !kit_dia || !condicion) {
+      alert('Por favor completa todos los campos.');
+      return;
+    }
+
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = 'ENVIANDO...';
+    btn.disabled = true;
+
+    const payload = {
+      form_id:    'confirmacion',
+      nombre, celular, emergencia,
+      categoria, punto, kit_dia, condicion
+    };
+
+    try {
+      let iframe = document.getElementById('hidden_iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'hidden_iframe';
+        iframe.id   = 'hidden_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      const form = document.createElement('form');
+      form.method  = 'POST';
+      form.action  = APPS_SCRIPT_URL;
+      form.target  = 'hidden_iframe';
+      form.style.display = 'none';
+
+      Object.entries(payload).forEach(([key, val]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = val;
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      await new Promise(res => setTimeout(res, 1500));
+
+      document.getElementById('regForm').style.display = 'none';
+      document.getElementById('successScreen').style.display = 'block';
+      document.getElementById('successNombre').textContent = nombre.split(' ')[0].toUpperCase();
+
+      const rows = [
+        ['Nombre',        nombre],
+        ['Celular',       celular],
+        ['Emergencia',    emergencia],
+        ['Categoría',     categoria],
+        ['Punto recojo',  punto],
+        ['Kit',           kit_dia],
+        ['Condición',     condicion],
+      ];
+
+      document.getElementById('summaryBox').innerHTML = rows.map(([k, v]) =>
+        `<div class="s-row"><span class="s-key">${k}</span><span class="s-val">${v}</span></div>`
+      ).join('');
+
+    } catch(err) {
+      btn.textContent = 'CONFIRMAR ASISTENCIA →';
+      btn.disabled = false;
+      alert('Error al enviar. Intenta de nuevo.');
+    }
+  });
+</script>
+</body>
+</html>
